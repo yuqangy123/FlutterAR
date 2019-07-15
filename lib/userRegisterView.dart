@@ -21,8 +21,8 @@ class _userRegitserViewerState extends State<userRegisterView> {
           Opacity(
               opacity: 0.5,
               child: Container(
-                width: screenSize.width/1.0,
-                height: screenSize.height/1.0,
+                width: screenSize.width,
+                height: screenSize.height,
                 decoration: BoxDecoration(color: Colors.black38 ),
               )
           ),
@@ -47,36 +47,31 @@ class _userRegitserViewerState extends State<userRegisterView> {
               height: containerSize.height,
 
               child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Text("手机号", style:TextStyle(color: Colors.white, fontSize: 16)),
                       new TextField(
                         decoration: InputDecoration(
-                          labelStyle: TextStyle(
-                            fontSize: 14,
-                            color: Colors.white,
-                          ),
+                          labelStyle: TextStyle( fontSize: 14, color: Colors.white,),
                         ),
                       )
-                  ]),
+                    ]
+                  ),
                   Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: <Widget>[
                         Text("验证码", style:TextStyle(color: Colors.white, fontSize: 16)),
                         new TextField(
                           decoration: InputDecoration(
                             border: OutlineInputBorder(),
-                            labelStyle: TextStyle(
-                              fontSize: 14,
-                              color: Colors.white,
-                            ),
+                            labelStyle: TextStyle( fontSize: 14, color: Colors.white),
                           ),
                         )
-                      ])
+                      ]
+                  )
                 ],
               ),
             )
