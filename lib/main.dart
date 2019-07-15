@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
 
+import 'MainPageView.dart';
+
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
@@ -208,18 +210,21 @@ class BottomNavigationBarWidget extends StatefulWidget{
   BottomNavigationBarWidgetState createState() => new BottomNavigationBarWidgetState();
 }
 
-class BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>{
+class BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> with SingleTickerProviderStateMixin {
   int _selectedIndex = 0;
 
   static const TextStyle optionStyle =
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
-//    Image(image: AssetImage("icons/Switch_camera.png")),
-    Scaffold(
-      backgroundColor: Colors.white,
-
-
+    Image.asset(
+      // 图片路径
+      'places/india_chennai_flower_market.png',
+      // 包名
+      package: 'flutter_gallery_assets',
     ),
+    /*Scaffold(
+      backgroundColor: Colors.white,
+    ),*/
     SizedBox(
       child: Card(
         elevation: 20,
@@ -233,10 +238,7 @@ class BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget>{
       ),
     ),
 
-    Text(
-      'Index 2: School',
-      style: optionStyle,
-    ),
+    GridListDemo(),
   ];
 
   @override

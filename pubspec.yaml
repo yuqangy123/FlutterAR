@@ -24,6 +24,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
   english_words: ^3.1.0
+  flutter_gallery_assets: 0.1.9+2
+  chewie: ^0.9.7
+
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,7 +49,21 @@ flutter:
     - icons/Switch_camera.png
     - icons/home_page.png
     - imgs/loginView.jpg
-    
+    - packages/flutter_gallery_assets/people/ali_landscape.png
+    - packages/flutter_gallery_assets/places/india_chennai_flower_market.png
+    - packages/flutter_gallery_assets/places/india_tanjore_bronze_works.png
+    - packages/flutter_gallery_assets/places/india_tanjore_market_merchant.png
+    - packages/flutter_gallery_assets/places/india_tanjore_thanjavur_temple.png
+    - packages/flutter_gallery_assets/places/india_tanjore_thanjavur_temple_carvings.png
+    - packages/flutter_gallery_assets/places/india_pondicherry_salt_farm.png
+    - packages/flutter_gallery_assets/places/india_chennai_highway.png
+    - packages/flutter_gallery_assets/places/india_chettinad_silk_maker.png
+    - packages/flutter_gallery_assets/places/india_chettinad_produce.png
+    - packages/flutter_gallery_assets/places/india_tanjore_market_technology.png
+    - packages/flutter_gallery_assets/places/india_pondicherry_beach.png
+    - packages/flutter_gallery_assets/places/india_pondicherry_fisherman.png
+
+
   #  - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
