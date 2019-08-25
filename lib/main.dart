@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:english_words/english_words.dart';
+import 'package:flutter/services.dart';
 
 import 'MainPageView.dart';
 
@@ -241,6 +242,15 @@ class BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> wi
     GridListDemo(),
   ];
 
+  @override
+  void initState(){
+    super.initState();
+
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitDown,
+      DeviceOrientation.portraitUp,
+    ]);
+  }
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
