@@ -48,6 +48,8 @@ flutter:
   assets:
     - icons/Switch_camera.png
     - icons/home_page.png
+    - icons/fire.png
+    - icons/share.png
     - imgs/loginView.jpg
     - packages/flutter_gallery_assets/people/ali_landscape.png
     - packages/flutter_gallery_assets/places/india_chennai_flower_market.png

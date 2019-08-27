@@ -9,6 +9,8 @@ import 'package:flutter/services.dart';
 import 'package:video_player/video_player.dart';
 
 import 'package:flutter_app/userRegisterView.dart';
+
+import 'grid_tile_barEx.dart';
 //import '../../gallery/demo.dart';
 
 enum GridDemoTileStyle {
@@ -227,11 +229,12 @@ class _GridTitleText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return FittedBox(
-      fit: BoxFit.scaleDown,
+    return Text(text);
+    /*return FittedBox(
+      //fit: BoxFit.scaleDown,
       alignment: Alignment.centerLeft,
       child: Text(text),
-    );
+    );*/
   }
 }
 
@@ -324,6 +327,7 @@ class _GridPhotoViewerState extends State<GridPhotoViewer> with SingleTickerProv
   }
 }
 
+//视频列表，每个图片item
 class GridDemoPhotoItem extends StatelessWidget {
   GridDemoPhotoItem({
     Key key,
@@ -354,6 +358,10 @@ class GridDemoPhotoItem extends StatelessWidget {
     ));
   }
 
+  void _pushShareIcon()
+  {
+  }
+
   @override
   Widget build(BuildContext context) {
     final Widget image = GestureDetector(
@@ -375,7 +383,7 @@ class GridDemoPhotoItem extends StatelessWidget {
         return GridTile(
           header: GestureDetector(
             onTap: () { onBannerTap(photo); },
-            child: GridTileBar(
+            child: GridTileBarEx(
               title: _GridTitleText(photo.title),
               backgroundColor: Colors.black45,
               leading: Icon(
@@ -391,15 +399,21 @@ class GridDemoPhotoItem extends StatelessWidget {
         return GridTile(
           footer: GestureDetector(
             onTap: () { onBannerTap(photo); },
-            child:SizedBox(height: 50, child: GridTileBar(
+            child:SizedBox(height: 40, child: GridTileBarEx(
               backgroundColor: Colors.black45,
               title: _GridTitleText(photo.title ),
               //subtitle: _GridTitleText(photo.caption),
-              subtitle: Icon(Icons.live_tv),
-              trailing: Icon(
-                icon,
-                color: Colors.white,
+              subtitle:Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  ImageIcon(AssetImage("icons/fire.png"), color: Colors.red, size: 15,),
+                  IconButton(icon: Image.asset('icons/share.png'), onPressed:_pushShareIcon, iconSize: 15,),
+                  //ImageIcon(AssetImage("icons/share.png"),  size: 15,),
+                ],
               ),
+              //ImageIcon(AssetImage("icons/fire.png"), color: Colors.red, size: 15,),
+              //trailing: IconButton(icon: Icon(Icons.share), onPressed:_pushShareIcon , iconSize: 20),
             )),
           ),
           child: image,
@@ -426,7 +440,7 @@ class GridListDemoState extends State<GridListDemo> {
     Photo(
       assetName: 'places/india_chennai_flower_market.png',
       assetPackage: _kGalleryAssetsPackage,
-      title: 'Chennai',
+      title: 'ChennaiChennaiChennaiChennai',
       caption: 'Flower Market',
     ),
     Photo(
