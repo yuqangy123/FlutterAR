@@ -360,6 +360,7 @@ class GridDemoPhotoItem extends StatelessWidget {
 
   void _pushShareIcon()
   {
+      print("_pushShareIcon");
   }
 
   @override
@@ -407,13 +408,13 @@ class GridDemoPhotoItem extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  ImageIcon(AssetImage("icons/fire.png"), color: Colors.red, size: 15,),
-                  IconButton(icon: Image.asset('icons/share.png'), onPressed:_pushShareIcon, iconSize: 15,),
-                  //ImageIcon(AssetImage("icons/share.png"),  size: 15,),
+                  Row(children: <Widget>[
+                    ImageIcon(AssetImage("icons/fire.png"), color: Colors.red, size: 20,),
+                    Text('test'),
+                  ],),
+                  InkResponse(child:Icon(Icons.share),onTap: _pushShareIcon,),//InkResponse监听widget手势
                 ],
               ),
-              //ImageIcon(AssetImage("icons/fire.png"), color: Colors.red, size: 15,),
-              //trailing: IconButton(icon: Icon(Icons.share), onPressed:_pushShareIcon , iconSize: 20),
             )),
           ),
           child: image,

@@ -42,7 +42,7 @@ class _userRegitserViewerState extends State<userRegisterView> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
             Text("验证码", style:TextStyle(color: Colors.white, fontSize: 16)),
-            Stack(
+            Stack(//组合widget,堆叠起来
               alignment : AlignmentDirectional(0.98, 0.0),
               children: <Widget>[
                 TextField(
